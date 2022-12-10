@@ -50,4 +50,15 @@ print(Eachcountry_CO2Emi.describe())
 print()
 print(transpose_Eachcountry_CO2emi)
 print()
-
+"""
+Below is the dataframe of Electric power consumption (kWh per capita) indicator for 
+India,China,Ghana,Nigeria and Argentina with its transpose with
+nations as columns from 1990 to 2000.
+"""
+Nations_Power_consump,transpose_Nations_Power_consump= ClimateChangeData(filename,nations_name,fields,indicators[2])
+print(Nations_Power_consump)
+print()
+print(Nations_Power_consump.describe())
+print()
+print(transpose_Nations_Power_consump)
+print()
