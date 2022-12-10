@@ -23,7 +23,7 @@ def ClimateChangeData(filename,nations_name,fields,indicator):
 filename = 'API_19_DS2_en_csv_v2_4700503.csv'
 nations_name = ['India','China','Ghana','Nigeria','Argentina']
 fields = ['Country Name', '1990','1991','1992','1993','1994','1995','1996','1997','1998','1999','2000']
-indicators = ['Urban population', 'CO2 emissions (metric tons per capita)', 'Access to electricity (% of population)']
+indicators = ['Urban population', 'CO2 emissions (metric tons per capita)', 'Electric power consumption (kWh per capita)']
 
 """
 Below is the dataframe of Urban population indicator for 
@@ -46,7 +46,7 @@ nations as columns from 1990 to 2000.
 Eachcountry_CO2Emi,transpose_Eachcountry_CO2emi = ClimateChangeData(filename,nations_name,fields,indicators[1])
 print(Eachcountry_CO2Emi)
 print()
-print(uban_pops.describe())
+print(Eachcountry_CO2Emi.describe())
 print()
 print(transpose_Eachcountry_CO2emi)
 print()
