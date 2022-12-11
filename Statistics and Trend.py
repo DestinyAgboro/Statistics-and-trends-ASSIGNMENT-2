@@ -62,3 +62,25 @@ print(Nations_Power_consump.describe())
 print()
 print(transpose_Nations_Power_consump)
 print()
+"""
+A grouped bar of CO2 emission for various nations over years from 1990 to 2000
+"""
+Eachcountry_CO2Emi.plot(kind='bar')
+plt.title('Grouped bar of CO2 emission for various nations over years')
+plt.xlabel('Countries')
+plt.ylabel('Co2 emission')
+plt.rcParams["figure.dpi"] = 500
+plt.show()
+
+"""
+Trend in Urban Population for These Five Nations Year-over-Year
+"""
+plt.figure(figsize=(10,7),dpi=500)
+for i in range(len(nations_name)):
+    plt.plot(transpose_uban_pops.index,transpose_uban_pops[nations_name[i]],label=nations_name[i])
+plt.legend(bbox_to_anchor=(1,1))
+plt.title('Trend in Urban Population for These Five Nations Year-over-Year')
+plt.xlabel('Year')
+plt.ylabel('Urban Population')
+plt.show()
+
