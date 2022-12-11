@@ -8,11 +8,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-"""
-Creating my function which accepts a filename as an input, 
-reads a dataframe in Worldbank format, and outputs two dataframes:
-one with years as columns, the other with nations.
-"""
+
 def ClimateChangeData(filename,nations_name,fields,indicator):
     """
     filename: read the csv file from Worldbank into it
