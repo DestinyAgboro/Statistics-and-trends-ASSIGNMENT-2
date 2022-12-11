@@ -14,12 +14,23 @@ reads a dataframe in Worldbank format, and outputs two dataframes:
 one with years as columns, the other with nations.
 """
 def ClimateChangeData(filename,nations_name,fields,indicator):
-    DataFrame = pd.read_csv(filename,skiprows=4)
-    DataFrame = DataFrame[DataFrame['Indicator Name'] == indicator]
-    DataFrame = DataFrame[fields]
-    DataFrame.set_index('Country Name', inplace = True)
-    DataFrame = DataFrame.loc[nations_name]
-    return DataFrame,DataFrame.transpose()
+    """
+    filename: read the csv file from Worldbank into it
+    Nations_name:holds all the nations nane
+    fields: contains all the years
+    indicator :this takes the different indicator use for the analysis such as Urban population,CO2 emissions and Electric power consumption    
+    
+    Creating function which accepts a filename as an input, 
+    reads a dataframe in Worldbank format, and outputs two dataframes:
+    one with years as columns, the other with nations.
+    """
+    df = pd.read_csv(filename,skiprows=4)
+    df = df[df['Indicator Name'] == indicator]
+    df = df[fields]
+    df.set_index('Country Name', inplace = True)
+    df = df.loc[nations_name]
+    return df,df.transpose()
+
 filename = 'API_19_DS2_en_csv_v2_4700503.csv'
 nations_name = ['India','China','Ghana','Nigeria','Argentina']
 fields = ['Country Name', '1990','1991','1992','1993','1994','1995','1996','1997','1998','1999','2000']
