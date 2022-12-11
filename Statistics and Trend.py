@@ -83,4 +83,38 @@ plt.title('Trend in Urban Population for These Five Nations Year-over-Year')
 plt.xlabel('Year')
 plt.ylabel('Urban Population')
 plt.show()
+"""
+The below are Correlation heatmap for Argentina
+"""
+print(transpose_uban_pops['Argentina'])
+print()
+Argentina = pd.DataFrame(
+{'Urban Population': transpose_uban_pops['Argentina'],
+'Co2 emission': transpose_Eachcountry_CO2emi['Argentina'],
+'power.consumption': transpose_Nations_Power_consump['Argentina']},
+['1990','1991','1992','1993','1994','1995','1996','1997','1998','1999','2000'])
+print(Argentina.corr())
+print()
+plt.figure(figsize=(8,5))
+sns.heatmap(Argentina.corr(),annot=True,cmap='Greens')
+plt.title('Correlation heatmap Argentina')
+plt.show()
+
+"""
+The below are Correlation heatmap for India
+"""
+print(transpose_uban_pops['India'])
+print()
+India = pd.DataFrame(
+{'Urban Population': transpose_uban_pops['India'],
+'Co2 emission': transpose_Eachcountry_CO2emi['India'],
+'power.consumption': transpose_Nations_Power_consump['India']},
+['1990','1991','1992','1993','1994','1995','1996','1997','1998','1999','2000'])
+print(India.corr())
+print()
+plt.figure(figsize=(8,5))
+sns.heatmap(India.corr(),annot=True,cmap='Oranges')
+plt.title('Correlation heatmap India')
+plt.show()
+
 
